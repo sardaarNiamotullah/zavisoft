@@ -21,16 +21,9 @@ class ProductController extends GetxController {
       allProducts.where((p) =>
           p.category == "jewelery" || p.category == "electronics").toList();
 
-  @override
-  void onInit() {
-    super.onInit();
-    fetchProducts();
-  }
-
   Future<void> fetchProducts() async {
     error = '';
     setLoading(true);
-
     try {
       final products = await _repo.fetchAllProducts();
       allProducts = products;

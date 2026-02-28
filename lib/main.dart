@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zavisoft/core/all_bindings.dart';
-import 'package:zavisoft/features/home/presentation/home_page.dart';
+import 'package:zavisoft/features/home/presentation/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         title: 'Zavisoft',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
-        home: const HomePage(),
+        home: const SplashScreen(),
       );
   }
 }

@@ -28,14 +28,29 @@ class CustomListTile extends StatelessWidget {
             width: 48,
             height: 48,
             fit: BoxFit.contain,
-            errorBuilder: (_, __, ___) => const Icon(Icons.broken_image),
+            errorBuilder: (_, _, _) => const Icon(Icons.broken_image),
           ),
         ),
-        title: Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis),
-        subtitle: Text(product.description, maxLines: 1, overflow: TextOverflow.ellipsis),
+        title: Text(
+          product.name,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          ),
+        ),
+        subtitle: Text(
+          product.description,
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,
+        ),
         trailing: Text(
           '\$${product.price.toStringAsFixed(2)}',
-          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.deepPurple),
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          ),
         ),
       ),
     );

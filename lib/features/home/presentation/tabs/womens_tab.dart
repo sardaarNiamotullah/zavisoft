@@ -9,28 +9,11 @@ class WomensTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ProductController>(
-      builder: (controller) {
-        if (controller.isLoading) {
+      builder: (pc) {
+        if (pc.isLoading) {
           return const Center(child: CircularProgressIndicator());
         }
-        if (controller.error.isNotEmpty) {
-          return Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(controller.error),
-                ElevatedButton(
-                  onPressed: controller.fetchProducts,
-                  child: const Text('Retry'),
-                ),
-              ],
-            ),
-          );
-        }
-        final products = controller.womensProducts;
-        if (products.isEmpty) {
-          return const Center(child: Text('No products found'));
-        }
+        final products = pc.womensProducts;
         return ListView.builder(
           padding: EdgeInsets.zero,
           itemCount: products.length,

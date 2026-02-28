@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zavisoft/features/home/presentation/widgets/logo_widget.dart';
 
 class CollapsibleHeader extends StatelessWidget {
   const CollapsibleHeader({super.key});
@@ -13,14 +14,7 @@ class CollapsibleHeader extends StatelessWidget {
         onPressed: () {},
         icon: const Icon(Icons.menu, color: Colors.white),
       ),
-      title: const Text(
-        'Z A V I S O F T',
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 2,
-        ),
-      ),
+      title: const LogoWidget(), 
       actions: [
         Container(
           margin: const EdgeInsets.only(right: 12),

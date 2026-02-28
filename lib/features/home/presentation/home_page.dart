@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:zavisoft/features/home/presentation/others_tab.dart';
+import 'package:zavisoft/features/home/presentation/tabs/mens_tab.dart';
+import 'package:zavisoft/features/home/presentation/tabs/others_tab.dart';
+import 'package:zavisoft/features/home/presentation/tabs/womens_tab.dart';
 import 'package:zavisoft/features/home/presentation/widgets/collapsible_header.dart';
 import 'package:zavisoft/features/home/presentation/widgets/sticky_tab_bar.dart';
-import 'mens_tab.dart';
-import 'womens_tab.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
