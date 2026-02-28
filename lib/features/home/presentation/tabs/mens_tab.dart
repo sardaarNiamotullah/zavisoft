@@ -13,13 +13,30 @@ class MensTab extends StatelessWidget {
         if (pc.isLoading) {
           return const Center(child: CircularProgressIndicator());
         }
+
         return RefreshIndicator(
           onRefresh: pc.refreshMens,
-          child: ListView.builder(
-            padding: EdgeInsets.zero,
-            itemCount: pc.mensProducts.length,
-            itemBuilder: (context, index) =>
-                CustomListTile(product: pc.mensProducts[index], index: index),
+          child: CustomScrollView(
+            key: const PageStorageKey<String>('mens_tab'),
+            slivers: [
+              Builder(
+                builder: (context) => SliverOverlapInjector(
+                  handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.zero,
+                sliver: SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) => CustomListTile(
+                      product: pc.mensProducts[index],
+                      index: index,
+                    ),
+                    childCount: pc.mensProducts.length,
+                  ),
+                ),
+              ),
+            ],
           ),
         );
       },

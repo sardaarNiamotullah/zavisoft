@@ -1,18 +1,34 @@
 import 'package:flutter/material.dart';
 
 class LogoWidget extends StatelessWidget {
-  final bool islargeLoge;
-  const LogoWidget({super.key, this.islargeLoge = false});
+  final bool isLargeLogo;
+  const LogoWidget({super.key, this.isLargeLogo = false});
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Z A V I S O F T',
-      style: TextStyle(
-        color: Colors.white,
-        fontWeight: FontWeight.bold,
-        letterSpacing: 2,
-        fontSize: islargeLoge ? 30 : 20,
+    return Hero(
+      tag: 'logo',
+      child: RichText(
+        text: TextSpan(
+          text: 'Z A V I S O F T',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2,
+            fontSize: isLargeLogo ? 24 : 18,
+          ),
+          children: [
+            TextSpan(
+              text: ' shop',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2,
+                fontSize: isLargeLogo ? 12 : 10,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

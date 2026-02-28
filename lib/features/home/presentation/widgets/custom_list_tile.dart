@@ -21,6 +21,7 @@ class CustomListTile extends StatelessWidget {
         right: 16,
       ),
       child: ListTile(
+        dense: true,
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: Image.network(
@@ -32,7 +33,7 @@ class CustomListTile extends StatelessWidget {
           ),
         ),
         title: Text(
-          '${index + 1}. ${product.name}',
+          product.name,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(

@@ -5,20 +5,19 @@ class StickyTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PinnedHeaderSliver(
-      child: Container(
-        color: Colors.white,
-        child: TabBar(
-          isScrollable: false,
-          labelColor: Colors.deepPurple,
-          unselectedLabelColor: Colors.black,
-          dividerColor: Colors.grey.shade200,
-          tabs: [
-            Tab(text: 'Men'),
-            Tab(text: 'Women'),
-            Tab(text: 'Kids'),
-          ],
-        ),
+    return Container(
+      color: Colors.white,
+      child: TabBar(
+        isScrollable: false,
+        labelColor: Colors.deepPurple,
+        unselectedLabelColor: Colors.black,
+        dividerColor: Colors.grey.shade200,
+        indicatorColor: Colors.deepPurple,
+        tabs: const [
+          Tab(text: 'Men'),
+          Tab(text: 'Women'),
+          Tab(text: 'Kids'),
+        ],
       ),
     );
   }

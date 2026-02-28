@@ -13,14 +13,30 @@ class OthersTab extends StatelessWidget {
         if (pc.isLoading) {
           return const Center(child: CircularProgressIndicator());
         }
-        final products = pc.othersProducts;
+
         return RefreshIndicator(
           onRefresh: pc.refreshOthers,
-          child: ListView.builder(
-            padding: EdgeInsets.zero,
-            itemCount: products.length,
-            itemBuilder: (context, index) =>
-                CustomListTile(product: products[index], index: index),
+          child: CustomScrollView(
+            key: const PageStorageKey<String>('others_tab'),
+            slivers: [
+              Builder(
+                builder: (context) => SliverOverlapInjector(
+                  handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.zero,
+                sliver: SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) => CustomListTile(
+                      product: pc.othersProducts[index],
+                      index: index,
+                    ),
+                    childCount: pc.othersProducts.length,
+                  ),
+                ),
+              ),
+            ],
           ),
         );
       },

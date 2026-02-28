@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:zavisoft/features/home/presentation/widgets/logo_widget.dart';
 
-class CollapsibleHeader extends StatelessWidget {
-  const CollapsibleHeader({super.key});
+class CollapsibleAppBar extends StatelessWidget {
+  const CollapsibleAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      floating: true,
-      pinned: false,
+    return AppBar(
       backgroundColor: Colors.deepPurple,
       leading: IconButton(
         onPressed: () {},
         icon: const Icon(Icons.menu, color: Colors.white),
       ),
-      title: const LogoWidget(), 
+      title: const LogoWidget(),
       actions: [
         Container(
           margin: const EdgeInsets.only(right: 12),

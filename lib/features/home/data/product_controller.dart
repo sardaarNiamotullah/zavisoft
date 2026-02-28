@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:zavisoft/features/home/data/product_model.dart';
 import 'package:zavisoft/features/home/data/product_repo.dart';
@@ -49,7 +48,7 @@ class ProductController extends GetxController {
   void _appendAndShuffle(
     List<ProductModel> displayList,
     List<ProductModel> baseList, {
-    int count = 8,
+    int count = 1,
   }) {
     final random = Random();
     displayList.addAll(
@@ -60,7 +59,6 @@ class ProductController extends GetxController {
 
   Future<void> refreshMens() async {
     _appendAndShuffle(mensProducts, _baseMens);
-    debugPrint('Mens after refresh: ${mensProducts.length}');
     update();
   }
 
