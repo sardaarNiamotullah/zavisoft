@@ -13,12 +13,14 @@ class MensTab extends StatelessWidget {
         if (pc.isLoading) {
           return const Center(child: CircularProgressIndicator());
         }
-        final products = pc.mensProducts;
-        return ListView.builder(
-          padding: EdgeInsets.zero,
-          itemCount: products.length,
-          itemBuilder: (context, index) =>
-              CustomListTile(product: products[index], index: index),
+        return RefreshIndicator(
+          onRefresh: pc.refreshMens,
+          child: ListView.builder(
+            padding: EdgeInsets.zero,
+            itemCount: pc.mensProducts.length,
+            itemBuilder: (context, index) =>
+                CustomListTile(product: pc.mensProducts[index], index: index),
+          ),
         );
       },
     );

@@ -14,11 +14,14 @@ class OthersTab extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         final products = pc.othersProducts;
-        return ListView.builder(
-          padding: EdgeInsets.zero,
-          itemCount: products.length,
-          itemBuilder: (context, index) =>
-              CustomListTile(product: products[index], index: index),
+        return RefreshIndicator(
+          onRefresh: pc.refreshOthers,
+          child: ListView.builder(
+            padding: EdgeInsets.zero,
+            itemCount: products.length,
+            itemBuilder: (context, index) =>
+                CustomListTile(product: products[index], index: index),
+          ),
         );
       },
     );

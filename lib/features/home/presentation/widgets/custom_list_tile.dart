@@ -32,7 +32,7 @@ class CustomListTile extends StatelessWidget {
           ),
         ),
         title: Text(
-          product.name,
+          '${index + 1}. ${product.name}',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(

@@ -14,11 +14,14 @@ class WomensTab extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         final products = pc.womensProducts;
-        return ListView.builder(
-          padding: EdgeInsets.zero,
-          itemCount: products.length,
-          itemBuilder: (context, index) =>
-              CustomListTile(product: products[index], index: index),
+        return RefreshIndicator(
+          onRefresh: pc.refreshWomens,
+          child: ListView.builder(
+            padding: EdgeInsets.zero,
+            itemCount: products.length,
+            itemBuilder: (context, index) =>
+                CustomListTile(product: products[index], index: index),
+          ),
         );
       },
     );
