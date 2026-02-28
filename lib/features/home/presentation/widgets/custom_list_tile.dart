@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:zavisoft/features/home/data/product_model.dart';
 
 class CustomListTile extends StatelessWidget {
-  final String title;
+  final ProductModel product;
   final int index;
-  const CustomListTile({super.key, required this.title, required this.index});
+
+  const CustomListTile({super.key, required this.product, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,24 @@ class CustomListTile extends StatelessWidget {
         left: 16,
         right: 16,
       ),
-      child: ListTile(title: Text('$title item: ${index + 1}')),
+      child: ListTile(
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(6),
+          child: Image.network(
+            product.imageUrl,
+            width: 48,
+            height: 48,
+            fit: BoxFit.contain,
+            errorBuilder: (_, __, ___) => const Icon(Icons.broken_image),
+          ),
+        ),
+        title: Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis),
+        subtitle: Text(product.description, maxLines: 1, overflow: TextOverflow.ellipsis),
+        trailing: Text(
+          '\$${product.price.toStringAsFixed(2)}',
+          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.deepPurple),
+        ),
+      ),
     );
   }
 }

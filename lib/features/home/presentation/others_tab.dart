@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:zavisoft/features/home/data/product_controller.dart';
 import 'package:zavisoft/features/home/presentation/widgets/custom_list_tile.dart';
 
-class MensTab extends StatelessWidget {
-  const MensTab({super.key});
+class OthersTab extends StatelessWidget {
+  const OthersTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class MensTab extends StatelessWidget {
             ),
           );
         }
-        final products = controller.mensProducts;
+        final products = controller.othersProducts;
         if (products.isEmpty) {
           return const Center(child: Text('No products found'));
         }

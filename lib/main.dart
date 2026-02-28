@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:zavisoft/core/all_bindings.dart';
 import 'package:zavisoft/features/home/presentation/home_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initBindings();
   runApp(const MyApp());
 }
 
@@ -10,11 +14,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const HomePage(),
-    );
+    return 
+       GetMaterialApp(
+        title: 'Zavisoft',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
+        home: const HomePage(),
+      );
   }
 }
