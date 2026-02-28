@@ -16,7 +16,7 @@ class StickyTabBar extends StatelessWidget {
         tabs: const [
           Tab(text: 'Men'),
           Tab(text: 'Women'),
-          Tab(text: 'Kids'),
+          Tab(text: 'Others'),
         ],
       ),
     );

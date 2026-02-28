@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
        GetMaterialApp(
-        title: 'Zavisoft',
+        title: 'Zavisoft Shop',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
         home: const SplashScreen(),
