@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+class CollapsibleHeader extends StatelessWidget {
+  const CollapsibleHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      floating: true,
+      pinned: false,
+      backgroundColor: Colors.deepPurple,
+      leading: IconButton(
+        onPressed: () {},
+        icon: const Icon(Icons.menu, color: Colors.white),
+      ),
+      title: const Text(
+        'Z A V I S O F T',
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 2,
+        ),
+      ),
+      actions: [
+        Container(
+          margin: const EdgeInsets.only(right: 12),
+          child: const CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 16,
+            child: Icon(Icons.person, color: Colors.deepPurple),
+          ),
+        ),
+      ],
+    );
+  }
+}
